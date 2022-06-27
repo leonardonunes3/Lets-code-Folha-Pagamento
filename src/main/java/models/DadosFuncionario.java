@@ -99,13 +99,13 @@ public class DadosFuncionario {
     public BigDecimal getSalario() {
         return salario;
     }
-    void setSalario(BigDecimal salario) {
+    public void setSalario(BigDecimal salario) {
         this.salario = salario;
     }
 
     @Override
     public String toString() {
-        return nome + ", " + cpf + ", " + cargoFuncionario + ", "
-                + endereco.toString() + ", " + salario;
+        return cargoFuncionario + "," + nome + "," + cpf + ","
+                + endereco.toString() + "," + salario;
     }
 }

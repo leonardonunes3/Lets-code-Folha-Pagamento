@@ -41,7 +41,7 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return cidade + ", " + estado + ", "
-             + cep + ", " + complemento;
+        return cidade + "," + estado + ","
+             + cep + "," + complemento;
     }
 }
