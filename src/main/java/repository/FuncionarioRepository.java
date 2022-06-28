@@ -33,12 +33,12 @@ public class FuncionarioRepository implements Repository<Funcionario> {
 
     @Override
     public void atualizar(Funcionario entity) {
-
+    //TO-DO: Implementação atualização do registro
     }
 
     @Override
     public void excluir(Funcionario entity) {
-
+    //TO-DO: Implementação da exclusão do registro
     }
 
     @Override
@@ -121,7 +121,24 @@ public class FuncionarioRepository implements Repository<Funcionario> {
         return listaFuncionarios;
     }
 
-    public static BigDecimal buscaSalario(String cpf) {
-        return BigDecimal.ZERO;
+    public BigDecimal buscaSalario(String cpf, ArrayList<Funcionario> listaFuncionarios) {
+
+        for (Funcionario funcionario : listaFuncionarios) {
+            if(funcionario.getDadosFuncionario().getCpf().equals(cpf)) {
+                return funcionario.getDadosFuncionario().getSalario();
+            }
+        }
+
+        return BigDecimal.valueOf(-1);
+    }
+
+    public void listaSalarios(ArrayList<Funcionario> listaFuncionarios) {
+        BigDecimal totalSalarios = BigDecimal.ZERO;
+
+        for (Funcionario funcionario : listaFuncionarios) {
+            System.out.println(funcionario.getDadosFuncionario().toString());
+            totalSalarios = totalSalarios.add(funcionario.getDadosFuncionario().getSalario());
+        }
+        System.out.println("Total dos salários é: " + totalSalarios);
     }
 }

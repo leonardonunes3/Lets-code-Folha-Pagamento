@@ -9,4 +9,5 @@ public interface Funcionario {
 
     public DadosFuncionario getDadosFuncionario();
 
+
 }
